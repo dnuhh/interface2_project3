@@ -1,0 +1,97 @@
+.loginContainer,
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.loginContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.loginContainer img {
+    width: 250px;
+    margin: 10% auto 0;
+}
+
+.container {
+    margin: 0 auto 0;
+    width: 250px;
+}
+
+.container > * {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+}
+
+.container label {
+    color: #396057;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.container input {
+    color: #B5D6B1;
+    border: 2px solid #B5D6B1;
+}
+
+.container input[type=checkbox] {
+    margin-right: 5px;
+    border: 1px solid #B5D6B1;
+}
+
+.container button {
+    margin-top: 30px;
+    background-color: #B5D6B1;
+
+}
+
+.container button:active {
+    opacity: 0.7;
+}
+
+.profile {
+    color: #B5D6B1;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.profile img {
+    width: 200px;
+    margin: auto;
+}
+
+.profile h1 {
+    color: #396057;
+    margin: 1em auto 0;
+    font-size: 3.8rem;
+}
+
+.row span {
+    color: #396057;
+    font-size: 2rem;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+.logOut a {
+    text-decoration: none;
+}
+
+.logOut i {
+    color: #B5D6B1;
+    font-size: 6em;
+    margin: 50px 10px 0;
+    text-align: right;
+    display: block;
+}
+
+.logoOut a:active {
+    color: #396057;
+}
