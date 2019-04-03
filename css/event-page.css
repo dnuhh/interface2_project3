@@ -1,0 +1,65 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 2px;
+}
+
+.dateSq {
+    background: #eee;
+    height: 80px;
+    padding: 5px;
+}
+
+.daySq {
+    background: #eee;
+    height: 15px;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.daySq h4 {
+    padding: 0;
+    margin: 0;
+}
+
+#abc {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2px;
+    padding-left: 5px;
+
+}
+
+.num {
+    margin: 0;
+    color: #fff;
+}
+
+#addButton {
+    position: fixed;
+    height: 80px;
+    width: 80px;
+    background: white;
+    color: #B5D6B1;
+    border-radius: 100px;
+    text-align: center;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: 1px 2px 5px #999;
+    font-size: 8em;
+    display: grid;
+}
+
+#addButton .fa-plus {
+    margin: auto;
+}
+
+#shaded {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.5;
+    background: #fff;
+    z-index: 100;
+    display: none;
+}
