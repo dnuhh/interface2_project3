@@ -1,17 +1,22 @@
 .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-gap: 2px;
+    grid-gap: ;
+}
+
+.dateSq,
+.daySq {
+    border: solid #B5D6B1 1px;
 }
 
 .dateSq {
-    background: #eee;
+    background: ;
     height: 80px;
     padding: 5px;
 }
 
 .daySq {
-    background: #eee;
+    background: #B5D6B1;
     height: 15px;
     text-align: center;
     padding-top: 3px;
@@ -23,7 +28,7 @@
 }
 
 #abc {
-    background: #fff;
+    background: #B5D6B1;
     border-radius: 10px;
     padding: 2px;
     padding-left: 5px;
@@ -32,34 +37,75 @@
 
 .num {
     margin: 0;
-    color: #fff;
+    color: #eee;
 }
 
 #addButton {
     position: fixed;
-    height: 80px;
-    width: 80px;
-    background: white;
+    height: 60px;
+    width: 60px;
+    background: #fff;
     color: #B5D6B1;
     border-radius: 100px;
     text-align: center;
     bottom: 30px;
     right: 30px;
     box-shadow: 1px 2px 5px #999;
-    font-size: 8em;
+    font-size: 5em;
     display: grid;
+    transition: all 0.1s;
 }
 
 #addButton .fa-plus {
     margin: auto;
 }
 
+#addButton:active {
+    background: #B5D6B1;
+    color: #fff
+}
+
 #shaded {
     position: fixed;
-    height: 100vh;
+    height: 94vh;
     width: 100%;
     opacity: 0.5;
     background: #fff;
-    z-index: 100;
+    z-index: 10;
     display: none;
+}
+
+#addEvent {
+    border-radius: 15px;
+    background: #B5D6B1;
+    position: fixed;
+    height: 75vh;
+    width: 70%;
+    left: 10%;
+    top: 10%;
+    padding: 0 5%;
+    z-index: 20;
+    display: none;
+}
+#addEvent > *{
+    margin: 10px 0;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    border-radius: 15px;
+}
+#addEvent input {
+    color: #B5D6B1;
+    border: 2px solid #B5D6B1;
+}
+
+#addEvent input[type=checkbox] {
+    margin-right: 5px;
+    border: 1px solid #B5D6B1;
+}
+#desBox{
+    width: 90%;
+}
+.reveal{
+    display: block;
 }

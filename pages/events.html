@@ -12,11 +12,23 @@
 </head>
 
 <body>
-    
-    <div id="shaded"></div>
+    <div id="addEvent">
+        <h3>Create New Event</h3>
+        <label for="ename"><b>Event Name</b></label>
+        <br>
+        <input type="text" placeholder="" name="ename">
+        <br>
+        <label for="etime"><b>Time</b></label>
+        <br>
+        <input type="time" placeholder="" name="etime">
+        <br>
+        <label for="edes"><b>Description</b></label>
+        <br>
+        <input type="text" placeholder="" name="edes" id="desBox">
+    </div>
+    <div id="shaded" onclick="newEvent()"></div>
     <h1 id="currMonth">month</h1>
-    <div id="addButton"><i class="fas fa-plus"></i></div>
-    
+    <button id="addButton" class="button" type="button" onclick="newEvent()"><i class="fas fa-plus"></i></button>
     <div class="calendar">
         <div class="daySq">
             <h4>S</h4>
@@ -81,8 +93,8 @@
         <div class="dateSq"></div>
         <div class="dateSq"></div>
         <div class="dateSq"></div>
-        
-        
+
+
 
     </div>
     <script>
@@ -105,6 +117,19 @@
         month[11] = "December";
 
         document.getElementById("currMonth").innerHTML = month[date.getMonth()];
+
+
+        function newEvent() {
+            var x = document.getElementById("addEvent");
+            var y = document.getElementById("shaded");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                y.style.display = "block";
+            } else {
+                x.style.display = "none";
+                y.style.display = "none";
+            }
+        }
     </script>
 </body>
 
