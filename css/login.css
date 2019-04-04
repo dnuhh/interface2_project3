@@ -7,11 +7,14 @@
 .loginContainer {
     width: 100%;
     height: 100%;
+    display: block;
+    margin: auto;
 }
 
 .loginContainer img {
     width: 250px;
-    margin: 10% auto 0;
+    margin: 80px auto 0;
+    display: block;
 }
 
 .container {
@@ -80,18 +83,107 @@
     margin: 0 auto;
 }
 
-.logOut a {
-    text-decoration: none;
-}
 
 .logOut i {
     color: #B5D6B1;
-    font-size: 6em;
+    font-size: 4rem;
     margin: 50px 10px 0;
     text-align: right;
     display: block;
 }
 
-.logoOut a:active {
+.logOut i:hover {
+    cursor: pointer;
+}
+
+.logoOut i:active {
     color: #396057;
+}
+
+.alert {
+    color: #396057;
+    position: absolute;
+    width: 250px;
+    height: 120px;
+    top: 40%;
+    text-align: center;
+    left: 50%;
+    display: block;
+    margin-left: -125px;
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid #B5D6B1;
+    display: none;
+    z-index: 100;
+
+}
+
+.alert button {
+    padding: 10px;
+    margin: 0 15px;
+    border-radius: 15px;
+    font-size: 1.6rem;
+    color: #396057;
+    border: 2px solid #B5D6B1;
+}
+
+.alert button a {
+    color: #396057;
+    text-decoration: none;
+}
+
+.alert button:active {
+    background-color: #B5D6B1;
+}
+
+.alert button a:active {
+    background-color: #B5D6B1;
+}
+
+infoWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.containerNotes {
+    position: relative;
+    margin: 100px 10px;
+}
+
+.containerNotes h2 {}
+
+.containerNotes input[type=text] {
+    width: 80%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid #B5D6B1;
+    color: #B5D6B1;
+    font-size: 1.6rem;
+
+}
+
+.containerNotes input {
+    border: 1px solid transparent;
+    width: 80%;
+    padding: 20px;
+    color: #396057;
+    font-size: 4rem;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    margin: 20px 0 10px;
+}
+
+.containerNotes input[type=checkbox] {
+    width: auto;
+    font-size: 1.6rem;
+}
+
+.containerNotes ul li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    color: #396057;
+
+    list-style-type: none;
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/vue.min.js"></script>
+    <title></title>
+</head>
+
+<body>
+
+    <div id="app" class="containerNotes">
+       <input v-model="title"  class="notesName"/>
+            <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem" placeholder="Add a note" type="text" ></div>
+        
+        <ul>
+            <li v-for="item in items" :class="{ 'removed': item.checked }">
+                <div class="checkbox"> <label> <input type="checkbox" v-model="item.checked"> {{ item.text }} </label> </div>
+            </li>
+        </ul>
+
+
+    </div>
+
+
+    <div class="nav">
+        <a href="profile.html"><img src="../data/SVG/home.svg"></a>
+        <a href="notes.html"> <img src="../data/SVG/list-h.svg"> </a>
+        <a href="events.html"><img src="../data/SVG/calendar.svg"></a>
+        <a href="music.html"><img src="../data/SVG/music.svg"></a>
+    </div>
+</body>
+</html>
+<script src="../js/notes.js"></script>
