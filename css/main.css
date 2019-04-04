@@ -30,8 +30,10 @@ h3 {
 }
 
 p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',
+    sans-serif;
     font-size: 1.8rem;
+    color: #396057;
 }
 
 .nav {
@@ -45,14 +47,30 @@ p {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 800px;
 }
-
-.nav img {
-    padding: 10px;
+.nav a {
+    padding: 10px auto;
     width: 25%;
     margin: auto;
     
 }
-
+.nav a img{
+    width:100%;
+}
+#transparentBackground{
+    content: " ";
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    display: none;
+}
+#wrongPass{
+    color: red;
+    display: none;
+}
 @media only screen and (max-width: 400px) {
     body {}
 }

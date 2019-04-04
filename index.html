@@ -6,7 +6,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/login.css">
-    <script src="js/login.js"></script>
     <title></title>
 </head>
 
@@ -17,11 +16,11 @@
         <form class="login" action="" id="formLogIn">
             <div class="container">
                 <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required id="username">
+                <input type="text" placeholder="Enter Username" name="uname" id="username">
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required id="password">
-
+                <input type="password" placeholder="Enter Password" name="psw" id="password">
+                <p id="wrongPass"></p>
                 <button type="submit" id="submitLogIn" onclick="validate()">Login</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember" id="remember"> Remember me
@@ -31,5 +30,6 @@
         </div>
     </div>
 
+ <script src="js/login.js"></script>
 </body>
 </html>
