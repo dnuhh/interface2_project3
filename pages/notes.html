@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="../js/vue.min.js"></script>
     <title></title>
 </head>
@@ -12,12 +14,14 @@
 <body>
 
     <div id="app" class="containerNotes">
-       <input v-model="title"  class="notesName"/>
-            <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem" placeholder="Add a note" type="text" ></div>
-        
+        <input v-model="title" class="notesName" />
+        <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem" placeholder="Add a note" type="text"></div>
+
         <ul>
-            <li v-for="item in items" :class="{ 'removed': item.checked }">
-                <div class="checkbox"> <label> <input type="checkbox" v-model="item.checked"> {{ item.text }} </label> </div>
+            <li v-for="item in items" :class="{ 'removed': item.checked }" >
+                <div class="checkbox" v-model="item.checked">
+                    <label>
+                        <input type="checkbox" v-model="item.checked"> {{ item.text }} <i class="fas fa-trash" id-trash></i></label> </div>
             </li>
         </ul>
 
@@ -32,5 +36,6 @@
         <a href="music.html"><img src="../data/SVG/music.svg"></a>
     </div>
 </body>
+
 </html>
 <script src="../js/notes.js"></script>

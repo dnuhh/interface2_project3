@@ -124,6 +124,7 @@
     border-radius: 15px;
     font-size: 1.6rem;
     color: #396057;
+    background-color: white;
     border: 2px solid #B5D6B1;
 }
 
@@ -150,12 +151,15 @@ infoWrap {
 .containerNotes {
     position: relative;
     margin: 100px 10px;
+    width: 90%;
 }
 
 .containerNotes h2 {}
 
 .containerNotes input[type=text] {
-    width: 80%;
+    margin: 0 auto;
+    display: block;
+    position: relative;
     padding: 15px;
     border-radius: 15px;
     border: 2px solid #B5D6B1;
@@ -173,17 +177,32 @@ infoWrap {
     font-family: "Ubuntu", sans-serif;
     font-weight: bold;
     margin: 20px 0 10px;
+    resize: horizontal;
 }
 
 .containerNotes input[type=checkbox] {
     width: auto;
     font-size: 1.6rem;
 }
+.containerNotes i{
 
+}
+.containerNotes ul {
+    margin-left: 0;
+    padding: 0;
+}
 .containerNotes ul li {
+    padding: 10px;
+    width: 80%;
+    margin: 5px auto;
+    border-radius: 15px;
     font-family: 'Open Sans', sans-serif;
     font-size: 2rem;
     color: #396057;
-
     list-style-type: none;
+}
+
+
+.removed {
+    background-color: rgba(181, 214, 177, 0.3);
 }
