@@ -11,7 +11,7 @@
 
 .dateSq {
     background: ;
-    height: 80px;
+    height: 50px;
     padding: 5px;
 }
 
@@ -40,30 +40,7 @@
     color: #eee;
 }
 
-#addButton {
-    position: fixed;
-    height: 60px;
-    width: 60px;
-    background: #fff;
-    color: #B5D6B1;
-    border-radius: 100px;
-    text-align: center;
-    bottom: 30px;
-    right: 30px;
-    box-shadow: 1px 2px 5px #999;
-    font-size: 5em;
-    display: grid;
-    transition: all 0.1s;
-}
 
-#addButton .fa-plus {
-    margin: auto;
-}
-
-#addButton:active {
-    background: #B5D6B1;
-    color: #fff
-}
 
 #shaded {
     position: fixed;
@@ -87,13 +64,15 @@
     z-index: 20;
     display: none;
 }
-#addEvent > *{
+
+#addEvent > * {
     margin: 10px 0;
     padding: 10px;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
     border-radius: 15px;
 }
+
 #addEvent input {
     color: #B5D6B1;
     border: 2px solid #B5D6B1;
@@ -103,9 +82,35 @@
     margin-right: 5px;
     border: 1px solid #B5D6B1;
 }
-#desBox{
+
+#newEvent {
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    background: #fff;
+    color: #B5D6B1;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 5em;
+    display: grid;
+    transition: all 0.1s;
+    bottom: 90px;
+    right: 20px;
+}
+
+#newEvent .fa-plus {
+    margin: auto;
+}
+
+#newEvent:active {
+    background: #B5D6B1;
+    color: #fff
+}
+
+#desBox {
     width: 90%;
 }
-.reveal{
+
+.reveal {
     display: block;
-} 
+}
