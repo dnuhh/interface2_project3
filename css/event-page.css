@@ -1,4 +1,12 @@
-.calendar {
+h2 {
+    padding-left: 20px;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+#calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: ;

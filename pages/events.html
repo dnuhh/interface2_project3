@@ -1,12 +1,126 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/event-page.css">
     <title></title>
 </head>
 
 <body>
-    
+    <div id="addEvent">
+        <h3>Create New Event</h3>
+        <label for="ename"><b>Event Name</b></label>
+        <br>
+        <input type="text" placeholder="" name="ename">
+        <br>
+                <label for="edate"><b>Date</b></label>
+        <br>
+        <input type="date" placeholder="" name="edate">
+        <br>
+        <label for="etime"><b>Time</b></label>
+        <br>
+        <input type="time" placeholder="" name="etime">
+        <br>
+        <label for="edes"><b>Description</b></label>
+        <br>
+        <input type="text" placeholder="" name="edes" id="desBox">
+        
+    </div>
+    <div id="shaded" onclick="newEvent()"></div>
+    <h2 id="currMonth">month</h2>
+    <button id="newEvent" class="button" onclick="newEvent()"><i class="fas fa-plus"></i></button>
+    <div id="calendar">
+        <div class="daySq">
+            <h4>S</h4>
+        </div>
+        <div class="daySq">
+            <h4>M</h4>
+        </div>
+        <div class="daySq">
+            <h4>T</h4>
+        </div>
+        <div class="daySq">
+            <h4>W</h4>
+        </div>
+        <div class="daySq">
+            <h4>T</h4>
+        </div>
+        <div class="daySq">
+            <h4>F</h4>
+        </div>
+        <div class="daySq">
+            <h4>S</h4>
+        </div>
+    </div>
+
+    <div class="nav">
+        <a href="profile.html"><img src="../data/SVG/home-h.svg"></a>
+        <a href="notes.html"> <img src="../data/SVG/list.svg"> </a>
+        <a href="events.html"><img src="../data/SVG/calendar.svg"></a>
+        <a href="music.html"><img src="../data/SVG/music.svg"></a>
+    </div>
+    <script>
+        var date = new Date();
+        var year = date.getFullYear();
+        var dayVal = date.getDay();
+        var monVal = date.getMonth();
+        var d = new Date(year, monVal, 1);
+        var daysInMonth = new Date(year, monVal+1, 0).getDate();
+        var firstDay = d.getDay();
+        console.log(d);
+        console.log(daysInMonth);
+        var month = new Array(12);
+        var day = "";
+
+        month[0] = "January";
+        month[1] = "February";
+        month[2] = "March";
+        month[3] = "April";
+        month[4] = "May";
+        month[5] = "June";
+        month[6] = "July";
+        month[7] = "August";
+        month[8] = "September";
+        month[9] = "October";
+        month[10] = "Novermber";
+        month[11] = "December";
+        document.getElementById("currMonth").innerHTML = month[monVal];
+
+        var container = document.getElementById("calendar");
+        var dayInc = 1;
+        for (i = 0; i < (daysInMonth+firstDay); i++) {
+            if (i<firstDay) {
+                container.innerHTML += '<div class="dateSq"></div>';
+
+            } else {
+                container.innerHTML += '<div class="dateSq" onclick="newEvent(this.id)" id="' + month[monVal].substring(0, 3).toLowerCase() + dayInc + '"> <h3 class="num">' + dayInc + '</h3> </div>';
+                dayInc++;
+            }
+
+        }
+
+        function newEvent() {
+            var x = document.getElementById("addEvent");
+            var y = document.getElementById("shaded");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                y.style.display = "block";
+            } else {
+                x.style.display = "none";
+                y.style.display = "none";
+            }
+        }
+
+        function addEvent(dateId) {
+            console.log(dateId);
+            
+        }
+    </script>
 </body>
+
 </html>
