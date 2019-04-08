@@ -18,13 +18,16 @@
         <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem" placeholder="Add a note" type="text"></div>
 
         <ul>
-            <li v-for="item in items" :class="{ 'removed': item.checked }">
+            <li v-for="(item,n) in items" :class="{ 'removed': item.checked }">
                 <div class="checkbox" v-model="item.checked">
                     <label>
-                        <input type="checkbox" v-model="item.checked"> {{ item.text }} <i class="fas fa-trash" id-trash></i></label> </div>
+                        <input type="checkbox" v-model="item.checked" onclick="showIcon()"> {{ item.text }} <i  @click="deleteItem(n)" class="fas fa-trash" id="trash"></i></label>
+
+                </div>
             </li>
         </ul>
     </div>
+
 
     <div class="nav">
         <a href="profile.html"><img src="../data/SVG/home.svg"></a>

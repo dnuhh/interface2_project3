@@ -49,7 +49,6 @@
 .container button {
     margin-top: 30px;
     background-color: #B5D6B1;
-
 }
 
 .container button:active {
@@ -83,7 +82,6 @@
     margin: 0 auto;
 }
 
-
 .logOut i {
     color: #B5D6B1;
     font-size: 4rem;
@@ -115,7 +113,6 @@
     border: 2px solid #B5D6B1;
     display: none;
     z-index: 100;
-
 }
 
 .alert button {
@@ -145,7 +142,6 @@ infoWrap {
     position: absolute;
     top: 0;
     left: 0;
-
 }
 
 .containerNotes {
@@ -165,7 +161,6 @@ infoWrap {
     border: 2px solid #B5D6B1;
     color: #B5D6B1;
     font-size: 1.6rem;
-
 }
 
 .containerNotes input {
@@ -184,13 +179,11 @@ infoWrap {
     width: auto;
     font-size: 1.6rem;
 }
-.containerNotes i{
-
-}
 .containerNotes ul {
     margin-left: 0;
     padding: 0;
 }
+
 .containerNotes ul li {
     padding: 10px;
     width: 80%;
@@ -202,7 +195,16 @@ infoWrap {
     list-style-type: none;
 }
 
-
 .removed {
     background-color: rgba(181, 214, 177, 0.3);
+}
+
+label {
+    display: block;
+}
+.containerNotes i {
+    float: right;
+    margin: auto 0;
+    padding: auto 0;
+    display: none;
 }
