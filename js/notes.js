@@ -41,5 +41,5 @@ new Vue({
 
 function showIcon(){
     console.log(0);
-    document.getElementsById("trash").style.display="block";
+    document.getElementById("trash").style.display="block";
 }
