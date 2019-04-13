@@ -17,6 +17,11 @@
     display: block;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .container {
     margin: 0 auto 0;
     width: 250px;
@@ -179,6 +184,7 @@ infoWrap {
     width: auto;
     font-size: 1.6rem;
 }
+
 .containerNotes ul {
     margin-left: 0;
     padding: 0;
@@ -202,6 +208,7 @@ infoWrap {
 label {
     display: block;
 }
+
 .containerNotes i {
     float: right;
     margin: 15px 0;
