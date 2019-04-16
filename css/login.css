@@ -46,20 +46,22 @@ a {
     border: 2px solid #B5D6B1;
 }
 
-.container .button,  #login-button {
+.container .button,
+#login-button {
     margin-top: 30px;
     background-color: #B5D6B1;
     text-align: center;
 }
-#login-button{
+
+#login-button {
     text-align: center;
-    
-padding: 15px;
+
+    padding: 15px;
     color: #396057;
     border-radius: 15px;
     font-size: 1.6rem;
     display: block;
-    
+
     margin: 200px auto 0;
 }
 
@@ -158,26 +160,24 @@ infoWrap {
 
 .containerNotes {
     position: relative;
-    margin: 100px 10px;
-    width: 90%;
+    margin: 30px 10px;
 }
-
-.containerNotes h2 {}
 
 
 .containerNotes input {
     border: 1px solid transparent;
-    padding: 20px;
-    width:90%;
+    padding: 0px 20px;
+    width: 90%;
     color: #396057;
     font-size: 4rem;
     font-family: "Ubuntu", sans-serif;
     font-weight: bold;
-    margin: 20px 0 10px;
+    margin: 10px 0 ;
     resize: horizontal;
 }
+
 .containerNotes input[type=text] {
-    margin: 0 auto;
+    margin:0 0 0 20px ;
     position: relative;
     padding: 20px;
     border-radius: 15px;
@@ -191,7 +191,8 @@ infoWrap {
     display: inline-block;
     width: 100%;
 }
-.input-group button{
+
+.input-group button {
     border: 2px solid #B5D6B1;
     padding: 15px;
     height: 100%;
@@ -201,12 +202,14 @@ infoWrap {
     float: right;
     border-radius: 10px;
 }
-.input-group button i{
+
+.input-group button i {
     padding: 0;
     margin: auto;
     color: #396057;
     font-size: 2.7rem;
 }
+
 .containerNotes ul {
     margin-left: 0;
     padding: 0;
@@ -230,27 +233,85 @@ infoWrap {
 label {
     display: block;
 }
+
 .containerNotes i {
-    
     float: right;
     margin: 15px 0;
     padding: auto 0;
 }
+.my-notes{
+    margin: 100px 0;
+}
 
-}@media only screen and (max-width: 600px){
+.my-notes ul {
+    list-style: none;
+    margin: 0 10% 0 0;
+}
+
+.my-notes ul li {
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #396057;
+    padding: 4px;
+    margin: 0;
+    /*        border: 1px solid #B5D6B1;*/
+
+}
+.my-notes h2{
+    padding-left: 40px;
+}
+
+hr {
+    border: 0.5px solid #B5D6B1;
+}
+
+.fa-arrow-right {
+    float: right;
+    color: #B5D6B1;
+}
+
+#app,
+#app1,
+#app2,
+#app3 {
+    display: none;
+}
+
+.left {
+    display: block;
+    text-align: left;
+}
+
+#left, #left1, #left2, #left3 {
+    font-size: 3rem;
+    color: #B5D6B1;
+    position: relative;
+    float: left;
+    text-align: left;
+}
+
+@media only screen and (max-width: 630px) {
     .containerNotes input[type=text] {
-   width: 79%;
+        width: 79%;
+    }
 }
-}@media only screen and (max-width: 550px){
+
+@media only screen and (max-width: 600px) {
     .containerNotes input[type=text] {
-   width: 75%;
+        width: 75%;
+    }
 }
-}@media only screen and (max-width: 500px){
+
+@media only screen and (max-width: 500px) {
     .containerNotes input[type=text] {
-   width: 70%;
+        width: 70%;
+    }
 }
-}
-@media only screen and (max-width: 410px){
+
+@media only screen and (max-width: 430px) {
     .containerNotes input[type=text] {
-   width: 64%;
-}
+        width: 64%;
+    }@media only screen and (max-width: 360px) {
+    .containerNotes input[type=text] {
+        width: 60%;
+    }

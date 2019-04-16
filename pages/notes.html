@@ -7,47 +7,85 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/vue.min.js"></script>
     <title></title>
 </head>
 
 <body>
-<!--
-
-       <div id="app" class="containerNotes">
+    <div class="my-notes" id="list-of-notes">
+    <h2>My notes</h2>
+    <ul> 
+    <hr>
+    <li id="go-to0">to-do list<i class="fas fa-arrow-right"></i></li><hr>
+    <li id="go-to1">school<i class="fas fa-arrow-right"></i></li><hr>
+    <li id="go-to2">work<i class="fas fa-arrow-right"></i></li><hr>
+    <li id="go-to3">other<i class="fas fa-arrow-right"></i></li><hr>
+    </ul>
+</div>
+    <div id="app" class="containerNotes" data-aos="fade-right">
+     <div class="left"> <i class="fas fa-arrow-left" id="left"></i></div> 
         <input v-model="title" class="notesName" value="my notes" />
-        <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem" placeholder="Add a note" type="text"> <button @click="addItem"><i class="fas fa-plus"></i></button>  </div>
+        <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem" placeholder="Add a note" type="text"> <button @click="addItem"><i class="fas fa-plus"></i></button> </div>
 
         <ul>
             <li v-for="(item,n) in items" :class="{ 'removed': item.checked }">
-                    <label  onclick="showIcon()">
-                        {{ item.text }} <i  @click="deleteItem(n)" class="fas fa-trash" id="trash"></i></label>
+                <label onclick="showIcon()">
+                    {{ item.text }} <i @click="deleteItem(n)" class="fas fa-trash" id="trash"></i></label>
             </li>
         </ul>
     </div>
--->
-   
-   
+
+
     <div id="app1" class="containerNotes">
+       <div class="left"> <i class="fas fa-arrow-left" id="left1"></i></div> 
         <input v-model="title" class="notesName" value="my notes" />
-        <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem1" placeholder="Add a note" type="text"> <button @click="addItem1"><i class="fas fa-plus"></i></button>  </div>
+        <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem1" placeholder="Add a note" type="text"> <button @click="addItem1"><i class="fas fa-plus"></i></button> </div>
 
         <ul>
             <li v-for="(item,n) in items1" :class="{ 'removed': item.checked }">
-                    <label   onclick="showIcon()">
-                        {{ item.text }} <i  @click="deleteItem1(n)" class="fas fa-trash" id="trash"></i></label>
+                <label onclick="showIcon()">
+                    {{ item.text }} <i @click="deleteItem1(n)" class="fas fa-trash" id="trash"></i></label>
 
             </li>
         </ul>
     </div>
+    <div id="app2" class="containerNotes">
+       <div class="left"> <i class="fas fa-arrow-left" id="left2"></i></div> 
+        <input v-model="title" class="notesName" value="my notes" />
+        <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem2" placeholder="Add a note" type="text"> <button @click="addItem2"><i class="fas fa-plus"></i></button> </div>
 
+        <ul>
+            <li v-for="(item,n) in items2" :class="{ 'removed': item.checked }">
+                <label onclick="showIcon()">
+                    {{ item.text }} <i @click="deleteItem2(n)" class="fas fa-trash" id="trash"></i></label>
 
+            </li>
+        </ul>
+    </div>
+    <div id="app3" class="containerNotes">
+      <div class="left"> <i class="fas fa-arrow-left" id="left3"></i></div> 
+        <input v-model="title" class="notesName" value="my notes" />
+        <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem3" placeholder="Add a note" type="text"> <button @click="addItem3"><i class="fas fa-plus"></i></button> </div>
+
+        <ul>
+            <li v-for="(item,n) in items3" :class="{ 'removed': item.checked }">
+                <label onclick="showIcon()">
+                    {{ item.text }} <i @click="deleteItem3(n)" class="fas fa-trash" id="trash"></i></label>
+
+            </li>
+        </ul>
+    </div>
     <div class="nav">
         <a href="profile.html"><img src="../data/SVG/home.svg"></a>
         <a href="notes.html"> <img src="../data/SVG/list-h.svg"> </a>
         <a href="events.html"><img src="../data/SVG/calendar.svg"></a>
         <a href="/play/music-log.html"><img src="../data/SVG/music.svg"></a>
     </div>
+    <script>
+  AOS.init();
+</script>
 </body>
 
 </html>
