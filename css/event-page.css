@@ -19,8 +19,30 @@ h4 {
 
 .dateSq {
     background: ;
-    height: 50px;
+    min-height: 50px;
+    max-height: 60px;
     padding: 5px;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.activeCell:active {
+    background: #E4EDE2;
+}
+.deact{
+    background: #E4EDE2;
+}
+.dateSq p {
+    font-size: 1em;
+    padding: 2px 6px;
+    background: #B5D6B1;
+    color: #000;
+    border-radius: 10px;
+    font-weight: 600;
+    overflow: hidden;
+    margin: 4px 0;
+    max-height: 9px;
+    line-height: 10px;
 }
 
 .daySq {
@@ -45,7 +67,9 @@ h4 {
 
 .num {
     margin: 0;
-    color: #eee;
+    color: #333;
+    font-size: 1.4em;
+
 }
 
 
@@ -115,10 +139,37 @@ h4 {
     color: #fff
 }
 
-#desBox {
+#desField {
     width: 90%;
 }
 
 .reveal {
     display: block;
+}
+#eventDisplay{
+    padding: 15px 0 0 20px;
+}
+#eventDisplay h3 {
+    font-size: 3.0em;
+    margin: 0;
+    
+}
+#eventDisplay h4 {
+    font-size: 2.2em;
+    margin: 0;
+    font-weight: 500;
+}
+#eventDisplay h5 {
+    font-size: 2em;
+    margin-top: 2px;
+    color: #515151;
+}
+
+#eventDisplay h6{
+    font-size: 2.5em;
+    margin: 0;
+}
+
+#eventDisplay p{
+    margin: 0;
 }

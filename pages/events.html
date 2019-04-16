@@ -16,20 +16,28 @@
         <h3>Create New Event</h3>
         <label for="ename"><b>Event Name</b></label>
         <br>
-        <input type="text" placeholder="" name="ename">
+        <input type="text" placeholder="" name="ename" id="nameField" required>
         <br>
-                <label for="edate"><b>Date</b></label>
+        <label for="edate"><b>Date</b></label>
         <br>
-        <input type="date" placeholder="" name="edate">
+        <input type="date" placeholder="" name="edate" id="dateField" max="1979-12-31" required>
+
+        <!--<select name="eDate" size="5" id="dateField">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>-->
+
         <br>
         <label for="etime"><b>Time</b></label>
         <br>
-        <input type="time" placeholder="" name="etime">
+        <input type="time" placeholder="" name="etime" id="timeField">
         <br>
         <label for="edes"><b>Description</b></label>
         <br>
-        <input type="text" placeholder="" name="edes" id="desBox">
-        
+        <input type="text" placeholder="" name="edes" id="desField">
+        <button id="confirmEvent" class="button" onclick="addEvent()"><i class="fas fa-plus"></i></button>
     </div>
     <div id="shaded" onclick="newEvent()"></div>
     <h2 id="currMonth">month</h2>
@@ -58,24 +66,38 @@
         </div>
     </div>
 
+    <div id="eventDisplay">
+        <h3>Events</h3>
+        <h5 id="eventDisDate"></h5>
+        <div id="eventCon"></div>
+    </div>
+
     <div class="nav">
         <a href="profile.html"><img src="../data/SVG/home.svg"></a>
         <a href="notes.html"> <img src="../data/SVG/list.svg"> </a>
         <a href="events.html"><img src="../data/SVG/calendar-h.svg"></a>
          <a href="/play/music-log.html"><img src="../data/SVG/music.svg"></a>
     </div>
+
+
+
+
     <script>
         var date = new Date();
         var year = date.getFullYear();
         var dayVal = date.getDay();
         var monVal = date.getMonth();
         var d = new Date(year, monVal, 1);
-        var daysInMonth = new Date(year, monVal+1, 0).getDate();
+        var daysInMonth = new Date(year, monVal + 1, 0).getDate();
         var firstDay = d.getDay();
-        console.log(d);
-        console.log(daysInMonth);
         var month = new Array(12);
         var day = "";
+        var allEvents = [];
+
+        var nameField = document.getElementById("nameField");
+        var dateField = document.getElementById("dateField");
+        var timeField = document.getElementById("timeField");
+        var desField = document.getElementById("desField");
 
         month[0] = "January";
         month[1] = "February";
@@ -93,15 +115,25 @@
 
         var container = document.getElementById("calendar");
         var dayInc = 1;
-        for (i = 0; i < (daysInMonth+firstDay); i++) {
-            if (i<firstDay) {
-                container.innerHTML += '<div class="dateSq"></div>';
+        for (i = 0; i < (daysInMonth + firstDay); i++) {
+            if (i < firstDay) {
+                container.innerHTML += '<div class="dateSq deact"></div>';
 
+            } else if (dayInc < 10) {
+                container.innerHTML += '<div class="dateSq activeCell" onclick="displayEvent(this.id)" id="' + month[monVal].substring(0, 3).toLowerCase() + '0' + dayInc + '"> <h5 class="num">' + dayInc + '</h5> </div>';
+                dayInc++;
             } else {
-                container.innerHTML += '<div class="dateSq" onclick="newEvent(this.id)" id="' + month[monVal].substring(0, 3).toLowerCase() + dayInc + '"> <h3 class="num">' + dayInc + '</h3> </div>';
+                container.innerHTML += '<div class="dateSq" onclick="displayEvent(this.id)" id="' + month[monVal].substring(0, 3).toLowerCase() + dayInc + '"> <h5 class="num">' + dayInc + '</h5> </div>';
                 dayInc++;
             }
 
+        }
+        if (monVal.toString.length == 1) {
+            dateField.setAttribute("min", year + '-0' + (monVal + 1) + '-0' + 1);
+            dateField.setAttribute("max", year + '-0' + (monVal + 1) + '-' + daysInMonth);
+        } else {
+            dateField.setAttribute("min", year + '-' + (monVal + 1) + '-0' + 1);
+            dateField.setAttribute("max", year + '-' + (monVal + 1) + '-' + daysInMonth);
         }
 
         function newEvent() {
@@ -116,9 +148,69 @@
             }
         }
 
-        function addEvent(dateId) {
-            console.log(dateId);
-            
+        function updateCalendar(ename, edate) {
+            console.log("DONE");
+            var done = false;
+            var index = edate.lastIndexOf("-");
+            edate = edate.substring(index + 1);
+            if (edate.charAt("0") == "0") {
+                edate = edate.substring(1);
+            }
+            var updateDateEl = document.getElementById(month[monVal].substring(0, 3).toLowerCase() + edate);
+
+            if (updateDateEl.innerHTML.indexOf("<p>") != -1) {
+                var end = updateDateEl.innerHTML.indexOf("</p>");
+                var counter =
+                    updateDateEl.innerHTML += "<p>" + ename + "</p>";
+            } else {
+                updateDateEl.innerHTML += "<p>" + ename + "</p>";
+            }
+
+        }
+
+        function addEvent() {
+            if (dateField.value != "") {
+                var currentEvent = allEvents.length;
+                allEvents[currentEvent] = dateField.value + "*|*";
+
+                console.log(allEvents[currentEvent]);
+
+                if (nameField != "") {
+                    allEvents[currentEvent] += nameField.value;
+                } else {
+                    console.log("none pro");
+                    allEvents[currentEvent] += "No Event Name Provided";
+                }
+
+                console.log(allEvents[currentEvent]);
+
+                allEvents[currentEvent] += "*|*" + timeField.value + "*|*" + desField.value;
+
+                console.log(allEvents[currentEvent]);
+
+                updateCalendar(nameField.value, dateField.value);
+
+                console.log("event added");
+            } else {
+                console.log("all fields empty");
+            }
+        }
+
+        function displayEvent(date) {
+
+            console.log("view event");
+            var eventDisplay = document.getElementById("eventCon");
+            var eventDisDate = document.getElementById("eventDisDate");
+            eventCon.innerHTML='';
+            eventDisDate.innerHTML=month[monVal]+' '+date.substring(3)+', '+year;
+            for (i = 0; i < allEvents.length; i++) {
+                if (allEvents[i].substring(8,10) == date.substring(3)){
+                    eventDisplay.innerHTML += '<div><h6>ASDFGGHJKL</h6><h4>XX:XX PM</h4><h4>Description</h4> </div>'
+                }
+
+            }
+
+
         }
     </script>
 </body>

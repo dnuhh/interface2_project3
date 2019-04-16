@@ -4,6 +4,7 @@ body {
     margin: 0;
     font-size: 62.5%;
     transition: 0.25s;
+    background: #F5F4ED;
 }
 
 body {
@@ -54,13 +55,12 @@ p {
 }
 
 .nav a {
-    padding: 10px auto;
-    width: 25%;
+    padding: auto;
+    text-align: center;
     margin: auto;
 }
-
 .nav a img {
-    width: 100%;
+    width: 25%;
 }
 
 #transparentBackground {
