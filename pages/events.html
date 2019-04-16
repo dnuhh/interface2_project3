@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/event-page.css">
-    <title></title>
+    <title>Studii Events</title>
 </head>
 
 <body>
@@ -76,7 +76,7 @@
         <a href="profile.html"><img src="../data/SVG/home.svg"></a>
         <a href="notes.html"> <img src="../data/SVG/list.svg"> </a>
         <a href="events.html"><img src="../data/SVG/calendar-h.svg"></a>
-        <a href="music.html"><img src="../data/SVG/music.svg"></a>
+         <a href="/play/music-log.html"><img src="../data/SVG/music.svg"></a>
     </div>
 
 
@@ -197,7 +197,7 @@
         }
 
         function displayEvent(date) {
-            
+
             console.log("view event");
             var eventDisplay = document.getElementById("eventCon");
             var eventDisDate = document.getElementById("eventDisDate");
@@ -207,7 +207,7 @@
                 if (allEvents[i].substring(8,10) == date.substring(3)){
                     eventDisplay.innerHTML += '<div><h6>ASDFGGHJKL</h6><h4>XX:XX PM</h4><h4>Description</h4> </div>'
                 }
-                    
+
             }
 
 
