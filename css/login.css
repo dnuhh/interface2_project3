@@ -51,6 +51,17 @@ a {
     background-color: #B5D6B1;
     text-align: center;
 }
+#login-button{
+    text-align: center;
+    
+padding: 15px;
+    color: #396057;
+    border-radius: 15px;
+    font-size: 1.6rem;
+    display: block;
+    
+    margin: 200px auto 0;
+}
 
 .container .button:active {
     opacity: 0.7;
