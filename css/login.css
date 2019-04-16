@@ -46,17 +46,13 @@ a {
     border: 2px solid #B5D6B1;
 }
 
-.container input[type=checkbox] {
-    margin-right: 5px;
-    border: 1px solid #B5D6B1;
-}
-
-.container button {
+.container .button,  #login-button {
     margin-top: 30px;
     background-color: #B5D6B1;
+    text-align: center;
 }
 
-.container button:active {
+.container .button:active {
     opacity: 0.7;
 }
 
@@ -157,21 +153,11 @@ infoWrap {
 
 .containerNotes h2 {}
 
-.containerNotes input[type=text] {
-    margin: 0 auto;
-    display: block;
-    position: relative;
-    padding: 15px;
-    border-radius: 15px;
-    border: 2px solid #B5D6B1;
-    color: #B5D6B1;
-    font-size: 1.6rem;
-}
 
 .containerNotes input {
     border: 1px solid transparent;
-    width: 80%;
     padding: 20px;
+    width:90%;
     color: #396057;
     font-size: 4rem;
     font-family: "Ubuntu", sans-serif;
@@ -179,12 +165,37 @@ infoWrap {
     margin: 20px 0 10px;
     resize: horizontal;
 }
-
-.containerNotes input[type=checkbox] {
-    width: auto;
+.containerNotes input[type=text] {
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #B5D6B1;
+    color: #B5D6B1;
     font-size: 1.6rem;
+    width: 80%;
 }
 
+.input-group {
+    display: inline-block;
+    width: 100%;
+}
+.input-group button{
+    border: 2px solid #B5D6B1;
+    padding: 15px;
+    height: 100%;
+    margin: 0;
+    color: #396057;
+    background-color: #fff;
+    float: right;
+    border-radius: 10px;
+}
+.input-group button i{
+    padding: 0;
+    margin: auto;
+    color: #396057;
+    font-size: 2.7rem;
+}
 .containerNotes ul {
     margin-left: 0;
     padding: 0;
@@ -208,10 +219,27 @@ infoWrap {
 label {
     display: block;
 }
-
 .containerNotes i {
+    
     float: right;
     margin: 15px 0;
     padding: auto 0;
-    display: none;
+}
+
+}@media only screen and (max-width: 600px){
+    .containerNotes input[type=text] {
+   width: 79%;
+}
+}@media only screen and (max-width: 550px){
+    .containerNotes input[type=text] {
+   width: 75%;
+}
+}@media only screen and (max-width: 500px){
+    .containerNotes input[type=text] {
+   width: 70%;
+}
+}
+@media only screen and (max-width: 410px){
+    .containerNotes input[type=text] {
+   width: 64%;
 }

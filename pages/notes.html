@@ -19,13 +19,13 @@
    
     <div id="app" class="containerNotes">
         <input v-model="title" class="notesName" value="my notes" />
-        <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem" placeholder="Add a note" type="text"></div>
+        <div class="input-group"> <input v-model="newItem" @keyup.enter="addItem" placeholder="Add a note" type="text"> <button @click="addItem"><i class="fas fa-plus"></i></button>  </div>
 
         <ul>
             <li v-for="(item,n) in items" :class="{ 'removed': item.checked }">
                 <div class="checkbox" v-model="item.checked">
-                    <label>
-                        <input type="checkbox" v-model="item.checked" onclick="showIcon()"> {{ item.text }} <i  @click="deleteItem(n)" class="fas fa-trash" id="trash"></i></label>
+                    <label v-model="item.checked"  onclick="showIcon()">
+                        {{ item.text }} <i  @click="deleteItem(n)" class="fas fa-trash" id="trash"></i></label>
 
                 </div>
             </li>
@@ -37,9 +37,9 @@
         <a href="profile.html"><img src="../data/SVG/home.svg"></a>
         <a href="notes.html"> <img src="../data/SVG/list-h.svg"> </a>
         <a href="events.html"><img src="../data/SVG/calendar.svg"></a>
-        <a href="music.html"><img src="../data/SVG/music.svg"></a>
+        <a href="/play/public/index.html"><img src="../data/SVG/music.svg"></a>
     </div>
 </body>
 
 </html>
-<script src="../js/notes.js"></script>
+<script src="../js/notes.js"></script> 

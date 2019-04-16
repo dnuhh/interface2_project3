@@ -20,8 +20,7 @@ new Vue({
             text = this.newItem.trim();
             if (text) {
                 this.items.push({
-                    text: text,
-                    checked: false
+                    text: text
                 });
                 this.newItem = '';
                 this.saveItems();
@@ -38,8 +37,3 @@ new Vue({
     }
 
 });
-
-function showIcon(){
-    console.log(0);
-    document.getElementById("trash").style.display="block";
-}
