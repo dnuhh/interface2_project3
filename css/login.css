@@ -52,10 +52,13 @@ a {
     background-color: #B5D6B1;
     text-align: center;
 }
+#login p{
+    margin: 100px 20% 20px;
+    display: block;
+}
 
 #login-button {
     text-align: center;
-
     padding: 15px;
     color: #396057;
     border-radius: 15px;
@@ -64,27 +67,25 @@ a {
 
     margin: 200px auto 0;
 }
-
+audio{
+    margin: auto;
+    display: block;
+}
 .container .button:active {
     opacity: 0.7;
 }
 
 .profile {
     color: #B5D6B1;
-    margin: 50px auto 0;
+    margin:  auto 0;
     display: grid;
     grid-template-columns: 1fr;
 }
 
-.profile img {
-    width: 200px;
-    margin: auto;
-}
-
-.profile h1 {
+.profile h2 {
     color: #396057;
-    margin: 1em auto 0;
-    font-size: 3.8rem;
+    margin:0 0 0 10%;
+    font-size: 2.8rem;
 }
 
 .row span {
@@ -198,7 +199,7 @@ infoWrap {
     height: 100%;
     margin: 0;
     color: #396057;
-    background-color: #fff;
+    background-color: inherit;
     float: right;
     border-radius: 10px;
 }
@@ -289,7 +290,39 @@ hr {
     float: left;
     text-align: left;
 }
-
+.disp-img{
+    background-size: cover;
+    background-position: center;
+    width: 80%;
+    margin: 10px auto;
+    height: 150px;
+    border-radius: 15px;
+}
+#img1{
+    background-image: url(../data/josh-calabrese-635273-unsplash.jpg);
+}
+#img2{
+    background-image: url(../data/pawel-czerwinski-1056851-unsplash.jpg);
+}
+#img3{
+    background-image: url(../data/sarah-dorweiler-357715-unsplash.jpg);
+}.text-box {
+    padding: 30px 0 0 ;
+}
+.text-box >*{
+    text-shadow: 0.5px 0.5px 1px;
+}
+.text-box h3{
+    font-size: 1.9rem;
+}
+.links-containers i {
+    font-size: 3rem;
+    margin-top: -20px;
+        color: #396057;
+}
+.text-box p{
+        color: #B5D6B1;
+}
 @media only screen and (max-width: 630px) {
     .containerNotes input[type=text] {
         width: 79%;

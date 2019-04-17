@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +15,32 @@
 <body>
     <div class="logOut" id="logOutButton"> <i class="fas fa-sign-out-alt"></i></div>
     <div class="profile">
-        <img src="../data/welcome-2.png">
-        <h1 id="loginName">Hi Valeriia </h1>
-        <div class="row">
-            <p>You've created<span id="notesCreated"> 0 </span> notes</p>
-            <p>You've created<span id="eventsCreated"> 0 </span> events</p>
+        <h2>hello, user</h2>
+        <div class="links-containers">
+            <div class="disp-img" id="img1">
+                <div class="text-box">
+                    <h3>Never forget any tasks!</h3>
+                    <p>Create new note</p>
+                </div>
+                <a href="notes.html"><i class="fas fa-arrow-right"></i></a> 
+            </div>
+           <div class="disp-img" id="img2">
+
+                <div class="text-box">
+                    <h3>Need to save a date?</h3>
+                    <p>Create new event</p>
+                </div>
+               <a href="events.html"><i class="fas fa-arrow-right"></i></a>
+            </div>
+       
+        <div class="disp-img" id="img3">
+            <div class="text-box">
+                <h3>Chill out with some music</h3>
+                <p>Open music player</p>
+            </div>
+            <a href="../play/music-log.html"><i class="fas fa-arrow-right"></i></a>
         </div>
+         </div>
     </div>
     <div class="nav">
         <a href="profile.html"><img src="../data/SVG/home-h.svg"></a>
@@ -36,7 +57,6 @@
     </div>
     <div id="transparentBackground">
     </div>
-
-    <script src="../js/profile.js"> </script>
 </body>
+
 </html>
