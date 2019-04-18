@@ -4,37 +4,50 @@ body {
     margin: 0;
     font-size: 62.5%;
     transition: 0.25s;
-    background: #F5F4ED;
+    background-color: #F5F4ED;
 }
 
 body {
     max-width: 1024px;
 
 }
-body >*{
 
 }
-h1,
-h2,
-h3,
-h4,
-h5,
+
+h1{
+    font-family: 'Ubuntu', sans-serif;
+}
+h2{
+    font-family: 'Ubuntu', sans-serif;
+}
+h3{
+    font-family: 'Ubuntu', sans-serif;
+}
+h4{
+    font-family: 'Ubuntu', sans-serif;
+}
+h5{
+    font-family: 'Ubuntu', sans-serif;
+}
 h6 {
     font-family: 'Ubuntu', sans-serif;
 }
 
 h1 {
     font-size: 5.0rem;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 h2 {
     font-size: 4.0rem;
-     color: #396057;
+    color: #396057;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 h3 {
     font-size: 3.0rem;
-     color: #396057;
+    color: #396057;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 p {
@@ -61,6 +74,7 @@ p {
     text-align: center;
     margin: auto;
 }
+
 .nav a img {
     width: 25%;
 }

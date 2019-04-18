@@ -16,6 +16,7 @@
         border: 0px solid #d3d3d3;
         display: block;
         margin: 150px auto 0;
+        overflow: hidden;
     }
 
 </style>
@@ -179,7 +180,7 @@
 
             var canvas = document.getElementById("myCanvas");
             canvas.width = window.innerWidth/2;
-            canvas.height = window.innerHeight;
+            canvas.height = window.innerHeight/2;
             var context = canvas.getContext("2d");
 
             context.font = "28px Arial";
