@@ -1,5 +1,5 @@
 h2 {
-    padding-left: 20px;
+    padding-left: 10%;
 }
 
 h4 {
@@ -142,12 +142,17 @@ h4 {
 #desField {
     width: 90%;
 }
-
+#timeField{
+    width: 45%;
+}
+#dateField{
+    width: 45%;
+}
 .reveal {
     display: block;
 }
 #eventDisplay{
-    padding: 15px 0 0 20px;
+    padding: 15px 10%;
 }
 #eventDisplay h3 {
     font-size: 3.0em;
@@ -172,4 +177,9 @@ h4 {
 
 #eventDisplay p{
     margin: 0;
+}
+.grid-2-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
 }

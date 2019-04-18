@@ -9,10 +9,10 @@ body {
 
 body {
     max-width: 1024px;
-    background-color: #fdfffc;
+
 }
 body >*{
-     background-color: #fdfffc;
+
 }
 h1,
 h2,
@@ -44,7 +44,7 @@ p {
 }
 
 .nav {
-    border-top: 2px solid #396057;
+    box-shadow: 1px 1px 5px #D6D5BF;
     position: fixed;
     left: 0;
     bottom: 0px;
