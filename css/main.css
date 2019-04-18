@@ -4,15 +4,15 @@ body {
     margin: 0;
     font-size: 62.5%;
     transition: 0.25s;
-    background: #F5F4ED;
+    background-color: #F5F4ED;
 }
 
 body {
     max-width: 1024px;
-    background-color: #fdfffc;
+
 }
-body >*{
-     background-color: #fdfffc;
+body > *{
+     background-color: #F5F4ED;
 }
 h1,
 h2,
