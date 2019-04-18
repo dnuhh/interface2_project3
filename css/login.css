@@ -319,15 +319,16 @@ hr {
     margin: 10px auto;
     height: 150px;
     border-radius: 15px;
+    
 }
 #img1{
-    background-image: url(../data/josh-calabrese-635273-unsplash.jpg);
+    background-image: url(../data/brandi-redd-122054-unsplash.jpg);
 }
 #img2{
-    background-image: url(../data/pawel-czerwinski-1056851-unsplash.jpg);
+    background-image: url(../data/david-jorre-477050-unsplash.jpg);
 }
 #img3{
-    background-image: url(../data/sarah-dorweiler-357715-unsplash.jpg);
+    background-image: url(../data/olia-gozha-678463-unsplash.jpg);
 }.text-box {
     padding: 30px 0 0 ;
 }
@@ -340,9 +341,7 @@ hr {
     margin-top: -20px;
         color: #396057;
 }
-.text-box p{
-        color: #B5D6B1;
-}
+
 .container h4{
     text-align: center;
      color: #396057;
