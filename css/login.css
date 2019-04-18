@@ -3,17 +3,39 @@
     display: grid;
     grid-template-columns: 1fr;
 }
+#logoPreview{
+    width: 100%;
+    height: 100%;
+ -webkit-animation: fadeOut 1s forwards;
+    animation: fadeOut 1s forwards;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
 
+@-webkit-keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+#logoPreview img{
+    margin: 200px auto;
+    width: 70%;
+    display: block
+}
 .loginContainer {
     width: 100%;
     height: 100%;
-    display: block;
+    display: none;
     margin: auto;
 }
 
 .loginContainer img {
     width: 250px;
-    margin: 80px auto 0;
+    margin: 50px auto 0;
     display: block;
 }
 
@@ -37,8 +59,8 @@ a {
 
 .container label {
     color: #396057;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .container input {
@@ -48,7 +70,7 @@ a {
 
 .container .button,
 #login-button {
-    margin-top: 30px;
+    margin-top: 10px;
     background-color: #B5D6B1;
     text-align: center;
 }
@@ -309,9 +331,7 @@ hr {
 }.text-box {
     padding: 30px 0 0 ;
 }
-.text-box >*{
-    text-shadow: 0.5px 0.5px 1px;
-}
+
 .text-box h3{
     font-size: 1.9rem;
 }
@@ -322,6 +342,13 @@ hr {
 }
 .text-box p{
         color: #B5D6B1;
+}
+.container h4{
+    text-align: center;
+     color: #396057;
+    font-size: 2rem;
+    margin-bottom: 0px;
+    font-weight: bold;
 }
 @media only screen and (max-width: 630px) {
     .containerNotes input[type=text] {
