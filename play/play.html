@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/main.css">
 
 <head>
     <title>Studii music player</title>
-</head>
 
-<canvas id="myCanvas" style="border:0px solid #d3d3d3;"></canvas>
+<style>
+    #player-wrapper {
+        display: block;
+    }
+
+    #myCanvas {
+        border: 0px solid #d3d3d3;
+        display: block;
+        margin: 150px auto 0;
+    }
+
+</style>
+</head>
+<canvas id="myCanvas"></canvas>
 
 <body>
+    <div class="nav">
+        <a href="../pages/profile.html"><img src="../data/SVG/home-h.svg"></a>
+        <a href="../pages/notes.html"> <img src="../data/SVG/list-h.svg"> </a>
+        <a href="../pages/events.html"><img src="../data/SVG/calendar-h.svg"></a>
+        <a href="music-log.html"><img src="../data/SVG/music.svg"></a>
+    </div>
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <script>
         /**
          * Obtains parameters from the hash of the URL
          * @return Object
          */
-         function getHashParams() {
-          var hashParams = {};
-          var e, r = /([^&;=]+)=?([^&;]*)/g,
-              q = window.location.hash.substring(1);
-          while ( e = r.exec(q)) {
-             hashParams[e[1]] = decodeURIComponent(e[2]);
-          }
-          return hashParams;
+        function getHashParams() {
+            var hashParams = {};
+            var e, r = /([^&;=]+)=?([^&;]*)/g,
+                q = window.location.hash.substring(1);
+            while (e = r.exec(q)) {
+                hashParams[e[1]] = decodeURIComponent(e[2]);
+            }
+            return hashParams;
         }
 
         var params = getHashParams();
@@ -31,16 +52,34 @@
             const token = params.access_token;
             const player = new Spotify.Player({
                 name: 'Web player y\'all',
-                getOAuthToken: cb => { cb(token); }
+                getOAuthToken: cb => {
+                    cb(token);
+                }
             });
 
             console.log(token);
 
             // Error handling
-            player.addListener('initialization_error', ({ message }) => { console.error(message); });
-            player.addListener('authentication_error', ({ message }) => { console.error(message); });
-            player.addListener('account_error', ({ message }) => { console.error(message); });
-            player.addListener('playback_error', ({ message }) => { console.error(message); });
+            player.addListener('initialization_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('authentication_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('account_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
+            player.addListener('playback_error', ({
+                message
+            }) => {
+                console.error(message);
+            });
 
             // Playback status updates
             player.addListener('player_state_changed', state => {
@@ -51,7 +90,7 @@
                 context.fillText(state.track_window.current_track.name, 0, 320 + 30);
 
                 var img = new Image;
-                img.onload = function () {
+                img.onload = function() {
                     context.drawImage(img, 0, 0); // Or at whatever offset you like
                 };
                 img.src = state.track_window.current_track.album.images[0].url;
@@ -61,7 +100,9 @@
             });
 
             // Ready
-            player.addListener('ready', ({ device_id }) => {
+            player.addListener('ready', ({
+                device_id
+            }) => {
                 console.log('Ready with Device ID', device_id);
 
                 if (!playing)
@@ -73,7 +114,9 @@
             });
 
             // Not Ready
-            player.addListener('not_ready', ({ device_id }) => {
+            player.addListener('not_ready', ({
+                device_id
+            }) => {
                 console.log('Device ID has gone offline', device_id);
             });
 
@@ -93,7 +136,9 @@
                     //Song playback
                     fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
                         method: 'PUT',
-                        body: JSON.stringify({ uris: [spotify_uri] }),
+                        body: JSON.stringify({
+                            uris: [spotify_uri]
+                        }),
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${access_token}`
@@ -104,18 +149,20 @@
 
                     // Song analysis
                     fetch("https://api.spotify.com/v1/audio-analysis/" + spotify_uri_song.split(":")[2], {
-                        method: "GET",
-                        headers: {
-                            Authorization: `Bearer ${access_token}`
-                        }
-                    })
+                            method: "GET",
+                            headers: {
+                                Authorization: `Bearer ${access_token}`
+                            }
+                        })
                         .then(response => response.json())
-                        .then(({ beats }) => {
+                        .then(({
+                            beats
+                        }) => {
                             beats.forEach((beat, index) => {
                                 const timeSinceSongStart = new Date().getTime() - timeStart;
 
                                 if (beat.start * 1000 - timeSinceSongStart >= 0)
-                                    setTimeout(beatDown, beat.start * 1000 - - timeSinceSongStart);
+                                    setTimeout(beatDown, beat.start * 1000 - -timeSinceSongStart);
 
                                 if (index == 0) {
 
@@ -149,9 +196,10 @@
                 context.fillStyle = "#FFFFFF";
                 context.fillText("Beat", 0, 420);
 
-               // console.log("Beat up");
+                // console.log("Beat up");
             }
         };
+
     </script>
 </body>
 
