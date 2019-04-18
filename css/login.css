@@ -107,7 +107,6 @@ audio{
 .profile h2 {
     color: #396057;
     margin:0 0 0 10%;
-    font-size: 2.8rem;
 }
 
 .row span {
@@ -122,7 +121,7 @@ audio{
 .logOut i {
     color: #B5D6B1;
     font-size: 4rem;
-    margin: 50px 10px 0;
+    margin: 15px 10px 0;
     text-align: right;
     display: block;
 }
@@ -263,7 +262,7 @@ label {
     padding: auto 0;
 }
 .my-notes{
-    margin: 100px 0;
+    margin:  0;
 }
 
 .my-notes ul {
